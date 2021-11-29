@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Imposto Renda</title>
+  </head>
+  <body>
+    <!-- Escreva um programa que receba um vetor com 10 contribuintes. Esse vetor deve ser 
+      populado com valores lidos do teclado. Seu programa deve então retornar o vetor com 
+      os impostos de renda devido com base no salário anual e regra da Receita Federal -->
+    <script>
+      function impRenda() {
+        var aliq = [0, 7.5, 15.0, 22.5, 27.5];
+        var deduc = [0, 112.43, 280.94, 505.62, 692.78];
+        var i = 0,
+          noDeduc = false,
+          anual = 0,
+          resul = 0;
+        salMensal = parseInt(document.getElementById("salario").value);
+        if (salMensal <= 1499.15) {
+          document.write("Você não tem deduções de renda");
+          noDeduc = true;
+        } else if (salMensal <= 2246.75) {
+          i = 1;
+        } else if (salMensal <= 2995.7) {
+          i = 2;
+        } else if (salMensal <= 3743.19) {
+          i = 3;
+        } else {
+          i = 4;
+        }
+        if (!noDeduc) {
+          anual = salMensal * 12;
+          resul = (anual * aliq[i]) / 100 - deduc[i];
+          document.write(
+            "Salario " +
+              salMensal +
+              "<br>anual " +
+              anual +
+              "<br>aliq " +
+              aliq[i] +
+              "<br>deduc " +
+              deduc[i] +
+              "<br>Imp Renda " +
+              resul
+          );
+        }
+      }
+    </script>
+    <form
+      name="form2"
+      action="mailto:a@a.com"
+      onsubmit="return impRenda()"
+      method="post"
+    >
+      <h2>IMPOSTO DE RENDA</h2>
+      Indique seu salario mensal:
+      <input type="number" name="salario" id="salario" /><br /><br />
+      <input type="submit" value="Continuar" /> <br />
+    </form>
+  </body>
+</html>

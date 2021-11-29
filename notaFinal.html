@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Nota Final</title>
+</head>
+<body>
+    <!-- 1) Calcule a nota final, sabendo que AP1 e AP2 tem peso 40% e AP3 tem peso 20% -->
+    <script>
+        function notaFinal(ap1, ap2,ap3){
+            var p1 = 0, p2 = 0, p3 =0;
+            p1 = ap1*40/100;
+            p2 = ap2 * 40 / 100;
+            p3 = ap3 * 20 / 100;
+            return p1 + p2 + p3;
+        }
+        var nota = notaFinal(9,7,5);
+        document.write("Nota final = " + nota);
+    </script>
+</body>
+</html>
+
+
+  

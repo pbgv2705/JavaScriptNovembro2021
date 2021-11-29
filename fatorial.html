@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fatorial</title>
+  </head>
+  <body>
+    <!-- Faça um programa que calcule o fatorial de um número inteiro fornecido pelo usuário.
+         Ex.: 5!=5.4.3.2.1=120. -->
+    <script>
+      function fatorial() {
+        nro = parseInt(document.getElementById("nro").value);
+        var msgErro = "", texto = nro + "! = ", n = 1;
+        if (nro <= 0) { 
+          msgErro = "Número errado, tente novamente";
+        } else {
+          for (i = nro; i > 0; i--) {
+            n = n * (i);
+            texto += " * " + i;
+          }
+          document.write(texto + " = " + n);
+        }
+      }
+      
+    </script><form
+    name="form2"
+    action="mailto:a@a.com"
+    onsubmit="return fatorial()"
+    method="post"
+  >
+    <h2>FATORIAL</h2>
+    Indique um número:
+    <input type="number" name="nro" id="nro" /><br /><br />
+    <input type="submit" value="Continuar" /> <br />
+  </form>
+  </body>
+</html>

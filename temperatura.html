@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Temperatura</title>
+</head>
+<body>
+    <!-- Desenvolva um programa que recebe uma temperatura em Celsius (ºC) e devolve em  Fahrenheit (ºF). -->
+    <!-- (0 °C × 9 / 5) + 32 = 32 °F -->
+    <script>
+        function tempCaF(temp){
+            var farenh = 0;
+            farenh = (temp * 9 / 5) + 32;
+            return farenh;
+        }
+        var celsius = 34;
+        var temperatura = tempCaF(celsius);
+        console.log(`${celsius} °C equivale a ${temperatura} °F`);
+        var celsius = 25;
+        var temperatura = tempCaF(celsius);
+        console.log(`${celsius} °C equivale a ${temperatura} °F`);
+    </script>
+</body>
+</html>

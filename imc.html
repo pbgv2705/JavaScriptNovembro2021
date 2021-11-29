@@ -1,0 +1,46 @@
+<!DOCTYPE html >
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Calcular IMC e indique resultado correspondente</title>
+  </head>
+  <body>
+    <!-- Calcular el imc = peso/altura**2 -->
+    <script>
+     function imc(peso, altura){
+    var valor = peso/Math.pow(altura,2);
+    var resul = "", msg = "";
+    if (valor >= 0 && valor < 19){
+      resul = "MUITO MAGRO";
+      msg = "Dieta Especial";
+    }else if (valor >= 19 && valor < 25){
+      resul = "NORMAL";
+      msg = "Manter";
+    }else if (valor >= 25 && valor < 30){
+      resul = "SOBREPESO";
+      msg = "Dieta Especial";
+    } else if (valor >= 30 && valor < 40){
+      resul = "OBESO";
+      msg = "Academia e Nutricionista";
+    }else if (valor >= 40){
+      resul = "OBESIDAD GRAVE";
+      msg = "Procure um Médico";
+    }else{
+      result = "Cálculo não válido";
+      msg = "Favor revisar os valores de peso e altura";
+    }
+    console.log("resul = " + resul);
+    console.log("msg = " + msg);
+
+    return valor, resul, msg;
+}
+
+var n;
+n = imc(40,1.70);
+console.log("n = " + n);
+n = imc(120,1.70);
+console.log("n = " + n);
+
+     </script>
+  </body>
+</html>
